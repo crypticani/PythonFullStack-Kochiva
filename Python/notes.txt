@@ -1,0 +1,4 @@
+Hello!
+Writing code in Python is really really fun.
+It really is awesome!
+Bye.

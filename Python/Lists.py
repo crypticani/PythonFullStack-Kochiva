@@ -1,6 +1,6 @@
 def countPosition(str, target):
     result = []
-    str = str.split(" ")
+    str = str.split()
     for word in range(0, len(str)):
         if str[word] == target:
             result.append(word)
