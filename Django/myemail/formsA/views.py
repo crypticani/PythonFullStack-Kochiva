@@ -1,5 +1,5 @@
 from smtplib import SMTPServerDisconnected
-from django.forms import ValidationError
+# from django.forms import ValidationError
 from django.http import HttpResponse, request
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, EmailMessage,BadHeaderError
@@ -25,7 +25,7 @@ def EmailView(request):
                 uploaded_file = request.FILES['file']
                 if uploaded_file.size > 1048576:
                     messages.error(request,'File Size should be less than 1 MB')
-                    return render(request, "email.html", {'form': form})
+                    return render(request, "form.html", {'form': form})
                     # raise ValidationError(('File Size should be less than 1 MB'), code='invalid')
                     
             try:
@@ -42,5 +42,5 @@ def EmailView(request):
             # except:
             #     return HttpResponse("Sorry! Mail could not be sent.")
             return HttpResponse('Success! Thank you for your message.')
-    return render(request, "email.html", {'form': form})   
+    return render(request, "form.html", {'form': form})   
 

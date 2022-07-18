@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title></title>
+    </head>
+    <body>
+        {% autoescape off %}
+        <p style="font-size:15.5px;font-weight: bold;margin:40px 20px 15px 20px;">
+            <img src="/media/{{ header.img }}" alt="{{ header.img }}"><br/>
+            {{header | safe}}<br/>
+            {{message | safe}}<br/>
+            {{footer | safe}}<br/>
+            <img src="/media/{{ footer.img }}" alt="{{ footer.img }}">
+        </p>
+        {% endautoescape %}
+    </body>
+</html>
