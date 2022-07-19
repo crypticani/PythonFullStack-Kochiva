@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formsA',
     'databases',
+    'TaskQueues'
 ]
 
 MIDDLEWARE = [
