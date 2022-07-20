@@ -1,37 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Weather</title>
-    <meta name="description" content="Weather" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <h1>Weather</h1>
-                <form action="" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <!-- {{ form.as_p }} -->
-
-                    {% for field in form %}
-                    <p>
-                        {{ field.label_tag }}
-                    <div class="form">
-                        {{ field }}
-                    </div>
-                    </p>
-                    {% endfor %}
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </div>
-                </form>
-</body>
-
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- <link rel="stylesheet" href="./style.css"> -->
+    </head>
+    <body>
+        <div class="main" id="m">
+            <div class="search">
+                <input type="text" id="input" list="cities" oninput="handleOnChange(this)">
+                <datalist id="cities">
+                  </datalist>
+                <button type="submit" class="btn" name="button"><i class="fas fa-search"></i></button>
+            </div>
+            <img src="" id="weather-icon">
+            <h1 id="temperature"><span>0</span>&#176; C</h1>
+            <div class="below">
+                <div class="inner">
+                    <h6 class="inner-1">Cityname:XYZ</h6>
+                    <h6 class="inner-2">Country:XYZ</h6>
+                    <h6 class="inner-3">Pressure:0hPa</h6>
+                    <h6 class="inner-4">Humidity:0%</h6>
+                    <h6 class="inner-5">Sunrise:00:00</h6>
+                    <h6 class="inner-6">Discription:NONE</h6>
+                </div>
+            </div>
+        </div>
+        <script src={% static 'script.js' %}></script>
+    </body>
 </html>
