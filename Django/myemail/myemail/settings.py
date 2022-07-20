@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from myemail.credentials import GMAIL_USER, GMAIL_PASSWORD
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,8 +135,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "aniket.12108348@gmail.com"
-EMAIL_HOST_PASSWORD = "ttsb sjpw wokf sabf"
+EMAIL_HOST_USER = GMAIL_USER
+EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
 DEFAULT_FROM_EMAIL='Aniket Kumar'
 
 
