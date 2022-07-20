@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formsA',
     'databases',
-    'TaskQueues'
+    'TaskQueues',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "aniket.12108348@gmail.com"
 EMAIL_HOST_PASSWORD = "ttsb sjpw wokf sabf"
 DEFAULT_FROM_EMAIL='Aniket Kumar'
+
+
+# Configure your Q cluster
+# More details https://django-q.readthedocs.io/en/latest/configure.html
+Q_CLUSTER = {
+    "name": "mymail",
+    "orm": "default",  # Use Django's ORM + database for broker
+}

@@ -46,10 +46,16 @@ def EmailView(request):
         
             try:
                 # send_mail(subject, message, EMAIL_HOST_USER, [email], fail_silently=False)
+                hdr = ""
+                ftr = ""
+                if header is not None:
+                    hdr = "<br />".join(header.content.split("\n"))
+                if footer is not None:
+                    ftr = "<br />".join(footer.content.split("\n"))
                 context = {
                     'message': "<br />".join(message.split("\n")),
-                    'header': "<br />".join(header.content.split("\n")),
-                    'footer': "<br />".join(footer.content.split("\n"))
+                    'header': hdr,
+                    'footer': ftr
                 }
                 # print(message.replace("\\r\\n", "<br/>"))
                 html_message = render_to_string('email_template.html', context)

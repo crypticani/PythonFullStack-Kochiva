@@ -43,17 +43,5 @@ def EmailView(request):
             db_obj.footer = footer
             db_obj.save()
         
-            try:
-                # send_mail(subject, message, EMAIL_HOST_USER, [email], fail_silently=False)
-                send_mail_task(subject, email_to, cc, bcc, message, uploaded_file, header, footer)
-
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            except SMTPServerDisconnected as e:
-                return HttpResponse(e)
-            # except:
-            #     return HttpResponse("Sorry! Mail could not be sent.")
-
-            return HttpResponse('Success! Thank you for your message.')
-            # return render(request, 'email_template.html', context)
+            return HttpResponse("Thank You! You will recieve an email shortly.")
     return render(request, "form.html", {'form': form})

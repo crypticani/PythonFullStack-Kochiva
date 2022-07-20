@@ -9,5 +9,5 @@ class ContactForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
     file = forms.FileField(widget=forms.ClearableFileInput(), required=False)
-    header = forms.ModelChoiceField(queryset=Header.objects.all())
-    footer = forms.ModelChoiceField(queryset=Footer.objects.all())
+    header = forms.ModelChoiceField(queryset=Header.objects.all(), required=False)
+    footer = forms.ModelChoiceField(queryset=Footer.objects.all(), required=False)

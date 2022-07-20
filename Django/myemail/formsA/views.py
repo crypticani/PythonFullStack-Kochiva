@@ -1,7 +1,7 @@
 from smtplib import SMTPServerDisconnected
 # from django.forms import ValidationError
 from django.http import HttpResponse, request
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.core.mail import send_mail, EmailMessage,BadHeaderError
 from formsA.forms import ContactForm
 from myemail.settings import EMAIL_HOST_USER
