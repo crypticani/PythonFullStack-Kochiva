@@ -4,32 +4,34 @@
     <head>
         <meta charset="utf-8">
         <title>Weather App</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <!-- <link rel="stylesheet" href="./style.css"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     </head>
     <body>
+        <div class="container">
+            <h1>Weather</h1>
         <div class="main" id="m">
             <div class="search">
-                <input type="text" id="input" list="cities" oninput="handleOnChange(this)">
+                <input type="text" id="input" list="cities" required oninput="handleOnChange(this)" autofocus>
                 <datalist id="cities">
                   </datalist>
                 <button type="submit" class="btn" name="button"><i class="fas fa-search"></i></button>
             </div>
             <img src="" id="weather-icon">
             <h1 id="temperature"><span>0</span>&#176; C</h1>
-            <div class="below">
+            <div>
                 <div class="inner">
-                    <h6 class="inner-1">Cityname:XYZ</h6>
-                    <h6 class="inner-2">Country:XYZ</h6>
-                    <h6 class="inner-3">Pressure:0hPa</h6>
-                    <h6 class="inner-4">Humidity:0%</h6>
-                    <h6 class="inner-5">Sunrise:00:00</h6>
-                    <h6 class="inner-6">Discription:NONE</h6>
+                    <h6 class="inner-1">Cityname:</h6>
+                    <h6 class="inner-2">Country:</h6>
+                    <h6 class="inner-3">Feels like:</h6>
+                    <h6 class="inner-4">Humidity:</h6>
+                    <h6 class="inner-5">Wind Speed: </h6>
+                    <h6 class="inner-6">Condition:</h6>
                 </div>
             </div>
+        </div>
         </div>
         <script src={% static 'script.js' %}></script>
     </body>

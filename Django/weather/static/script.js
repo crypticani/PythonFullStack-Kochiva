@@ -14,6 +14,7 @@ const cities = document.getElementById("cities")
 let api_key = "0fd7f7019c5c42a49fa104303221507"
 
 function handleOnChange(e) {
+    if(e.value.length >= 3){
     let url = `http://api.weatherapi.com/v1/search.json?key=${api_key}&q=${e.value}`;
     fetch(url)
         .then(response => response.json())
@@ -24,9 +25,11 @@ function handleOnChange(e) {
                 cities.innerHTML+=`<option value="${city}">${city}</option>`
             }
         })
+    }
 }
 
 btn.addEventListener("click", () => {
+    if(input.value != null){
     temperature.innerText = "Data Fetching....";
     temperature.style.fontSize = "10px";
 
@@ -47,7 +50,11 @@ btn.addEventListener("click", () => {
             inner2.innerText = 'Country: ' + data.location.country;
             inner3.innerText = 'Feels like: ' + data.current.feelslike_c + ' C';
             inner4.innerText = 'Humidity: ' + data.current.humidity + "";
-            inner5.innerText = 'Wind: ' + data.current.wind_kph + " KPH";
+            inner5.innerText = 'Wind Speed: ' + data.current.wind_kph + " KPH";
             inner6.innerText = 'Condition: ' + data.current.condition.text;
         })
+    }
+    else{
+        window.alert("Please input the city name.")
+    }
 })
